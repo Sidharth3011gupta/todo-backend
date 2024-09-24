@@ -43,7 +43,7 @@ exports.toggleTodo = async (req, res) => {
     const { id } = req.params;
     try {
         const todo = await Todo.findById(id);
-        todo.completed = !todo.completed;
+        todo.completed = true
         await todo.save();
         res.status(200).json(todo);
     } catch (error) {
